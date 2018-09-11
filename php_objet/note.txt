@@ -1,0 +1,53 @@
+J1 :
+01 - Classes-objet-instance-visibilité
+02 - getter-setter-constructeur-this
+03 - manipulation-type-argument
+04 - constante-static-self
+
+J2 :
+05 - héritage (notion essentielle que l'on retouve dans tous les langages en objet)
+06 - Surcharge-abstraction-finalisation-interface-trait (chapitre très abstrait)
+07 - namespace (comment travailler à plusieurs dev' sur un même projet)
+08 - Autoload (Eviter de faire des dizaines de 'require')
+09 - methodes-magiques (quelques fonctions utiles existant dans le PHP OO)
+10 - classes-existantes (les classes qui existent déjà dans le langage)
+11 - PDO (déjà fait avec christophe)
+
+12 - MVC (Model View Controller)
+J3-4 :
+13 - boutique (miniframework maison basé sur la logique du symfony)
+
+
+
+
+            Rattrappages :
+            
+Jeudi      13 : +1h (9h > 18h)
+
+Lundi      17 : +1h (9h > 18h)
+
+Mercredi 19 : +1h (9h > 18h)
+
+Mardi      25 : +1h (9h > 18h)Jeudi 20 : Matin AJAX (9h00 - 13H)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
