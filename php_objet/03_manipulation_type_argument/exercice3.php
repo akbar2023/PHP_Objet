@@ -61,7 +61,7 @@ class Pompe
         return $this -> litre;
     }
 
-    public function donneEssence(Vehicule $v) { 
+    public function donneEssence(Vehicule $v) { // LA fonction donneEssence() est programmé pour recevoir un argument ($v) du type Objet de la classe Vehicule
         // Modifier l'objet pompe ($this)
         // Le volume de litre dans pompe est maintenant égal à l'ancien volume moins (le reservoire de $v moins le nbr de litre dans $v)
         $this -> setLitre($this -> getLitre() - ($v -> getReservoire() - $v -> getLitre() ) );
