@@ -13,7 +13,7 @@ J2 :
 10 - classes-existantes (les classes qui existent déjà dans le langage)
 11 - PDO (déjà fait avec christophe)
 
-12 - MVC (Model View Controller)
+12 - MVC Model(sql) View(html/css) Controller(php)
 J3-4 :
 13 - boutique (miniframework maison basé sur la logique du symfony)
 

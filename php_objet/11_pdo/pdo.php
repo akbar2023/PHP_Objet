@@ -26,7 +26,7 @@ Les différentes fonctions pour exécuter une requête :
 // 1 : Connexion sans erreur :
 // $pdo = new PDO('mysql:host=localhost;dbname=entreprise', 'root', '');
 
-// $requltat = $pdo -> query("dsjfdl");
+// $resultat = $pdo -> query("dsjfdl");
 // Les erreurs ne s'affichent pas.
 
 
@@ -35,7 +35,7 @@ Les différentes fonctions pour exécuter une requête :
 //     PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
 // ));
 
-// $requltat = $pdo -> query("dsjfdl");
+// $resultat = $pdo -> query("dsjfdl");
 
 // 3 : Connexion en mode erreur Exception :
 $pdo = new PDO('mysql:host=localhost;dbname=entreprise', 'root', '', array(
@@ -44,7 +44,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=entreprise', 'root', '', array(
 
 
 try {
-    // $requltat = $pdo -> query("dsjfdl");
+    // $resultat = $pdo -> query("dsjfdl");
 
     $prenom = 'Amandine';
     $nom = 'Thoyer';
@@ -61,20 +61,72 @@ try {
     $resultat = $pdo -> prepare("SELECT * FROM employes WHERE prenom = :prenom AND nom = :nom");
     
     $resultat -> execute(array(
-        ':nom' => $nom,
+        ':nom' => $nom, // on est pas obligé de respecter l'ordre
         ':prenom' => $prenom
     ));
+
+    // ou
+
+    // $resultat = $pdo -> prepare("SELECT * FROM employes WHERE prenom = :prenom AND nom = :nom");
+    
+    // $resultat -> execute($_POST);// on est pas obligé de respecter l'ordre
+
+    // ou alors
+
+    $resultat = $pdo -> prepare("SELECT * FROM employes WHERE prenom = :prenom AND nom = :nom");
+
+    $resultat -> bindParam(':prenom', $prenom, PDO::PARAM_STR);
+    $resultat -> bindParam(':nom', $nom, PDO::PARAM_STR);
+    $resultat -> execute();
+
+    // ***********************
+    // Fetch vs FetchALL (requête select avec plusieurs résultats)
+    // Fetch
+    $resultat = $pdo -> query("SELECT * FROM employes");
+    // $resultat = OBJ PDOStatement
+    // $resultat = INEXPLOITABLE
+    // combien de résultat à la requête : PLUSIEURS ===> Boucle
+
+    while ($employes = $resultat -> fetch(PDO::FETCH_ASSOC) ) {
+        echo '<h3>' . $employes['prenom'] . '</h3>';
+        echo '<ul>';
+        foreach($employes as $valeur) {
+            echo '<li>' . $valeur . '</li>';
+        }
+        echo '</ul>';
+
+    }
+
+    // FetchAll
+    $resultat = $pdo -> query("SELECT * FROM employes");
+    // $resultat = OBJ PDOStatement
+    // $resultat = INEXPLOITABLE
+    // Un ou plusieurs résultat : PLUSIEURS ===> boucle ou fetchAll
+    $employes = $resultat -> fetchAll(PDO::FETCH_ASSOC);
+    echo '<pre>';
+        print_r($employes);
+    echo '</pre>';
+
+    foreach($employes as $emp) {
+        echo '<h3>' . $emp['prenom'] . '</h3>';
+        echo '<ul>';
+            foreach ($emp as $valeur) {
+                echo '<li>' . $valeur . '</li>';
+            } 
+        echo '</ul>';
+    }
+
 
 }
 
 
 catch (PDOException $e) {
-    // echo '<div style="background:red;padding:10px;color:white;">';
-    // echo 'Erreur SQL : <br>';
-    // echo 'Erreur : ' . $e -> getMessage() . '<br>';
-    // echo 'Fichier : ' . $e -> getFile() . '<br>';
-    // echo 'Ligne : ' . $e -> getLine() . '<br>';
-    // echo '</div>';
+    echo '<div style="background:red;padding:10px;color:white;">'; // Ces lignes de echo ne sont pas à mettre dans un site en production mais qu'en phase de dév.
+    echo 'Erreur SQL : <br>';
+    echo 'Erreur : ' . $e -> getMessage() . '<br>';
+    echo 'Fichier : ' . $e -> getFile() . '<br>';
+    echo 'Ligne : ' . $e -> getLine() . '<br>';
+    echo '</div>';
 
     $f = fopen('erreur.txt', 'a');
     $ligne = 'Erreur SQL : ' . date('d/m/Y h:i:s') . "\r\n"; // "\r\n" permet de passer à la ligne dans le code source
