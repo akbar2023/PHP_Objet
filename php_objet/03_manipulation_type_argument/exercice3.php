@@ -95,7 +95,7 @@ $p = new Pompe;
 // div d'espacement
 echo '<div style="height: 20px"> </div>';
 
-$p -> setLitre(200);
+$p -> setLitre(800);
 
 echo '<div>La pompe possède ' . $p -> getLitre() . 'L d\'eesence.</div><hr>';
 
@@ -103,7 +103,6 @@ $p -> donneEssence($clio);
 echo 'Après ravitaillement <br>';
 echo 'Le véhicule contient ' . $clio -> getLitre() . 'L.<br>';
 echo 'La pompe contient ' . $p -> getLitre() . 'L d\'essence.';
-
 
 
 

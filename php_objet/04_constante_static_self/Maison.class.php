@@ -67,7 +67,3 @@ echo 'Piece : ' . Maison::getNbPiece() . '<br>'; //OK
     const signifie qu'un élément (propriété) appartient à la classe, mais ne peut pas être modifié.
 
 */
-
-
-
-

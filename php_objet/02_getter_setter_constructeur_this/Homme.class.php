@@ -44,7 +44,7 @@ echo 'Nom ' . $homme -> getNom() . '! <br>';
 
 /* 
 Commentaires : 
-    - Pouquoi faire de getters et des setters ?
+    - Pourquoi faire de getters et des setters ?
     Le PHP est un langage qui ne type pas ses variables... Il faut donc constamment vérifier l'intégrité des données.
     Mettre une propriété en visibilité private, et donc passer par les accesseurs (getter / setter), permet de vérifier à un seul (une seul fois) les données.
     C'EST UNE BONNE CONTRAINTE !!
