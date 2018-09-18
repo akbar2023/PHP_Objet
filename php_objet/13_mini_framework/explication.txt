@@ -36,9 +36,32 @@ vendor/
         PDOManager : Cette classe représente la connexion à la BDD. Elle contient et nous retourne notre objet PDO, grâce auquel nous pourrons exécuter des requêtes SQL.
         Cette classe est un Sinlgeton. Cela signifie qu'on ne peut y avoir qu'un seul objet de cette classe.
 
+    EntityRepository.php : Ce fichier centralise tout ce qui touche à la BDD. Les repositorys servent à effectuer des requêtes SQL. Ce fichier est le parent des repositorys,il gère la connexion à la BDD et les requêtes génériques.
 
 
+src/
+    Repository/
+        ProduitRepository.php : Ce fichier contiendra toutes les fonctionnalités lié à l'entité produit, et "demandera" à EntityRepository de faire certaines requêtes. On ne donnera dans ce repository que des requêtes qui lui sont propres.
 
+
+vendor/
+    Controller/
+        Controller.php : C'est le controlleur général de l'application. Il a deux mission :
+            1) Récupérer la repository correspondant à l'entité dans laquelle nous sommes (getRepository)
+            2) Afficher la vue correspondant à l'action en cours (render()).
+
+src/
+    Controller/
+    ProduitController.php : cette classe hérite de controller général, et permet de déclencher toutes les actions liées à l'entité Produit
+
+web/
+    Copier et coller : photos (CSS/, JS/, font/, img/ etc...)
+    
+
+src/
+    View/
+        Produit/
+            copier / coller depuis phpoo/12_mvc : boutique.php, fiche_produit.php
 
 
 

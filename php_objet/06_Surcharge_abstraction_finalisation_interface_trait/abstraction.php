@@ -40,7 +40,7 @@ Commentaires :
     - Une classe abstraite peut contenir des méthodes normales.
     - Lorsqu'on hérite une classe abstraite on doit OBLIGATOIREMENT redéfinir les méthodes abstraites.
 
-    Le développeur meître (lead dev') qui est au coeur de l'application, va obliger les autres dev' à redéfinir des méthodes. Ceci est une bonne pratique dans le cadre d'un travail collaboratif et hierarchisé.
+    Le développeur maître (lead dev') qui est au coeur de l'application, va obliger les autres dev' à redéfinir des méthodes. Ceci est une bonne pratique dans le cadre d'un travail collaboratif et hierarchisé.
 */
 
 
