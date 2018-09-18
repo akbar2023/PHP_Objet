@@ -3,12 +3,11 @@
 <div class="row">
 	<div class="col-md-3">
 		<div class="list-group">
-			<a href="" class="list-group-item">Tous</a>
+			<a href="<?= $url ?>" class="list-group-item">Tous</a>
 			
 			<?php foreach($categories as $cat): ?>
-			<a href="" class="list-group-item"><?php echo $cat['categorie'] ?></a>
+			<a href="<?= $url ?>produit/categorie/<?= $cat['categorie'] ?>" class="list-group-item"><?= $cat['categorie'] ?></a>
 			<?php endforeach; ?>
-			
 			
 		</div>
 	</div>
@@ -19,8 +18,7 @@
 			<?php foreach($produits as $pdt) : ?>
 			<div class="col-sm-4 mb-4">	
 				<div class="card">
-					<a href=""><img class="card-img-top" src="
-					<?= $pdt -> getPhoto() ?>" alt=""></a>
+					<a href="<?=$url ?>produit/affiche/<?= $pdt -> getId_produit() ?>"><img class="card-img-top" src="<?= $url . $pdt -> getPhoto() ?>" alt="<?= $pdt -> getTitre() ?>"></a>
 					<div class="card-body">
 						<h4><?= $pdt -> getTitre() ?></h4>
 						<h5><?= $pdt -> getPrix() ?>€</h5>
@@ -29,7 +27,6 @@
 				</div>
 			</div>
 			<?php endforeach; ?>
-			
 			
 		</div>
 	</div>

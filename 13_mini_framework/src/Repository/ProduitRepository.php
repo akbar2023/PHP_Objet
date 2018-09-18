@@ -62,7 +62,7 @@ class ProduitRepository extends EntityRepository {
 
     }
 
-    public function getAllSuggestion(Produit $produit) {
+    public function getAllSuggestions(\Entity\Produit $produit) {
         $prix = $produit -> getPrix();
         $categorie = $produit -> getPublic();
         $public = $produit -> getPublic();

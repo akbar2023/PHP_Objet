@@ -17,6 +17,10 @@ class Config {
 
     }
 
+    Public function getParametersUrl() {
+        return $this -> parameters['url'];
+    }
+
 
 }
 

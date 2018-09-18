@@ -3,11 +3,18 @@
 
 namespace Controller; 
 
-use Repository;
+use Repository, Config;
 
-class Controller
-{
+class Controller{
 	protected $repository; //Contiendra un objet de ProduitRepository, ou MembreRepository ou CommandeRepository etc... en fonction de l'entité dans laquelle je suis (produitController, ou MembreController ou CommandeController...) 
+
+	private $url;
+
+	public function __construct() {
+		require(__DIR__ . '/../../app/Config.php');
+		$config = new Config;
+		$this -> url = $config -> getParametersUrl();
+	}
 	
 	public function getRepository(){
 		// exemple : je suis dans Controller\ProduitController, et je veux un Repository\ProduitRepository
@@ -33,8 +40,14 @@ class Controller
 		// Si je suis dans Controller\ProdutController , je récupére le mot 'Produit' qui correspond au dossier où sont stockées mes vues. 
 		
 		$path_layout = $dirView . '/' . $layout;
+		// notre layout.html se trouve à la racine du dissier View 
+		// localhost/phpoo/13_framework/src/View/
+
 		$path_view = $dirView . '/' . $dirFile . '/' . $view;
+		// localhost/phpoo/13_framework/src/View/Produit/boutique.html
+
 	
+		$params['url'] = $this -> url;
 		extract($params);
 	
 		ob_start(); // enclenche la temporisation de sortie. Cela signifie que la ligne de code juste en dessous ne sera pas exécuter, elle sera retenue. 

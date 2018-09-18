@@ -7,7 +7,8 @@ $parameters = array(
         'dbname'    => 'site_commerce',
         'login'     => 'root',
         'password'  => ''
-    )
+    ),
+    'url' => 'http://localhost/php_oo/13_mini_framework/web/'
 );
 
 

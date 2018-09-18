@@ -3,8 +3,14 @@ session_start();
 
 require_once(__DIR__ . '/../vendor/autoload.php');
 
-// $app = new Manager\Application;
-// $app -> run();
+$app = new Manager\Application;
+$app -> run();
+
+// index.php/   produit     /   afficheall      
+// index.php/   produit     /   affiche     /2
+// index.php/   produit     /   categorie   /pull
+
+// www.monsite.com/produit/afficheall
 
 
 
@@ -81,6 +87,7 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 
 // TEST 5 : ProduitController
 
-$pc = new Controller\ProduitController;
-$pc -> afficheall();
+// $pc = new Controller\ProduitController;
+// $pc -> afficheall();
+// $pc -> affiche(5);
 

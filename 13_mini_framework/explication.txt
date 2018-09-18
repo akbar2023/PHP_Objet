@@ -62,6 +62,19 @@ src/
     View/
         Produit/
             copier / coller depuis phpoo/12_mvc : boutique.php, fiche_produit.php
+            ces deux fichiers correspondent aux vues des actions afficheall(), affiche(), categorie()
+            Nous travaillons maintenant en Objet donc $produit['titre'] devient $produit -> getTitre()
+            Plus tard ces fichiers auront l'extension .html (grâce à la méthode render())
+
+        layout.html : Ce fichier constitue la structures des pages du site. Le template. En fonction des sites, il peut y avoir plusieurs layout (home, Conditions Générale de Vente, BackOffice...)
+
+
+vendor/
+    Manager/
+        Application.php : cette class représente le lancement de notre application. Elle a pour mission, de scruter l'URL, et de lancer le bon controller, et la bonne méthode. 
+        C'est notre "interrupteur".
+
+
 
 
 
