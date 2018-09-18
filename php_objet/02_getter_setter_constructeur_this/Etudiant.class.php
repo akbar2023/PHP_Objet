@@ -9,8 +9,8 @@ class Etudiant
     private $prenom;
 
     public function __construct($prenom) {
-        // $this -> prenom = $prenom;
-        $this -> setPrenom($prenom);
+        $this -> prenom = $prenom;
+        // $this -> setPrenom($prenom);
     }
 
     public function setPrenom($prenom) {
