@@ -38,7 +38,7 @@ var_dump($singleton);
 var_dump($singleton2);
 echo '</pre>';
 
-// $songleton2 et $singletonfont référence au même objet. Il ne peut y avoir qu'un seul objet singleton
+// $songleton2 et $singleton font référence au même objet. Il ne peut y avoir qu'un seul objet singleton
 
 
 
