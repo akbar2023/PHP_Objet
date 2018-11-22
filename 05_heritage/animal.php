@@ -63,6 +63,6 @@ Commentaires :
 
     - Surcharge : Une classe enfant (héritière) peut modifier EN PARTIE le comportement d'une méthode dont elle a hérité (voir chapitre 06, fichier surcharge.php)   redéfinition != surcharge
 
-    -Dans le cas de l'héritage, l'interprtéeur va regarder dans la classe enfant si les méthodes exécutées existent, et si elle ne trouve pas elle regarde dans la classe parente.
+    -Dans le cas de l'héritage, l'interpréteur va regarder dans la classe enfant si les méthodes exécutées existent, et si elle ne trouve pas elle regarde dans la classe parente.
 */
 
